@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <FrameLayout
+    android:id="@+id/base_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp">
+
+      <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:id="@+id/desc_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Configuring Intent Output"
+        android:textColor="@color/purple_700"
+        android:fontFamily="sans-serif-thin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"  />
+
+      <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="The last bit of setup we need to do is configure the Intent Output plugin.\n\nThis plugin tells datawedge to send scan data to other applications via intents. Theres a couple bits of information we need to provide: an Action String, to receive the intent and the delivery mode. Theres a few different configurations for delivery mode: broadcast, startActivity or startService. In this instance, we're going to use the values below:"
+        app:layout_constraintTop_toBottomOf="@id/desc_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/action_string_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Intent Action"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toTopOf="@id/delivery_mode_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/action_string"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="com.zebra.dwbasicdemo.SCAN"/>
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/delivery_mode_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Delivery Mode"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        app:layout_constraintBottom_toTopOf="@id/configure_intent_output_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/action_string_layout">
+
+        <com.google.android.material.textfield.TextInputEditText
+          android:id="@+id/profile_name"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:text="2 (broadcast)"/>
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/configure_intent_output_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CONFIGURE INTENT OUTPUT"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delivery_mode_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </FrameLayout>
+
+</layout>

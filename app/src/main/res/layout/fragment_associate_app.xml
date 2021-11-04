@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <FrameLayout
+    android:id="@+id/base_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp">
+
+      <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:id="@+id/desc_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Associating Apps"
+        android:textColor="@color/purple_700"
+        android:fontFamily="sans-serif-thin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"  />
+
+      <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Now that we have created a profile, we need to associate it with one or more apps so that DataWedge knows when to make the profile active.\n\nFor simplicity, we'll just associate all activities within this app with the profile we just created."
+        app:layout_constraintTop_toBottomOf="@id/desc_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/associate_app_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ASSOCIATE PROFILE WITH APP"
+        android:layout_marginTop="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </FrameLayout>
+</layout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+  <FrameLayout
+    android:id="@+id/base_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_margin="8dp">
+
+      <TextView
+        style="@style/TextAppearance.MaterialComponents.Subtitle2"
+        android:id="@+id/desc_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Performing and Receiving a Scan"
+        android:textColor="@color/purple_700"
+        android:fontFamily="sans-serif-thin"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"  />
+
+      <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Now that DataWedge is configured, we can start performing scans and receiving the data in our application.\n\nTo start a scan, we can use the hardware buttons, or the soft button below.\n\nWhen a barcode has been decoded, we recieve the data in our application by registering a broadcast receiver to receive the scan intent from datawedge. "
+        app:layout_constraintTop_toBottomOf="@id/desc_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+      <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:id="@+id/scan_data_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Scan Data"
+        android:layout_marginTop="8dp"
+        android:enabled="false"
+        android:scrollbars="vertical"
+        app:layout_constraintTop_toBottomOf="@id/description"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+          android:id="@+id/scan_data"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:minLines="1"
+          android:maxLines="15"/>
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <com.google.android.material.button.MaterialButton
+        android:id="@+id/associate_app_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="SCAN"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/scan_data_layout" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+  </FrameLayout>
+</layout>

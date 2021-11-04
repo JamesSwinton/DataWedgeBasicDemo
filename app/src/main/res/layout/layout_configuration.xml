@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools">
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/base_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <TextView
+      style="@style/TextAppearance.MaterialComponents.Subtitle2"
+      android:id="@+id/desc_label"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="Configuration"
+      android:textColor="@color/purple_700"
+      android:fontFamily="sans-serif-thin"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"  />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/associate_app_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="CREATE PROFILE"
+      app:layout_constraintBottom_toTopOf="@id/configure_scanner_settings_button"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@id/desc_label" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/configure_scanner_settings_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="CONFIGURE SCANNER SETTINGS"
+      app:layout_constraintBottom_toTopOf="@+id/configure_intent_output_button"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.button.MaterialButton
+      android:id="@+id/configure_intent_output_button"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="CONFIGURE INTENT OUTPUT"
+      app:layout_constraintBottom_toBottomOf="parent" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
